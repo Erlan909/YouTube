@@ -1,0 +1,22 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+.input {
+    margin-left: 27%;
+    width: 30%;
+}
+.videos {
+    /* position: relative;
+    right: 0; */
+flex: 0 1 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 230px;
+    width: 70%;
+    margin-top: 175px;
+}
+/* .Mvideo {
+    width: 500px;
+} */

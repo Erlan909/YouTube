@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import Search  from './component/Search/index.js'
+import React, { useState, useEffect } from 'react'
+import { Route, Switch } from 'react-router-dom'
+import Detail from './component/Detail/index.js'
+import Header from './././component/Header/Header'
+import Novigator from '././component/Navigator/Novigator'
+import { API } from './config.js'
+export default function App() {
+  const [data, setData] = useState() 
+  const [value, setValue] = useState('') 
 
-function App() {
+  const search = async () => {
+    let resp = await fetch(API + '&q=' + value)
+    let data = await resp.json()
+    console.log(data);
+    setData(data.items)
+  }
+  useEffect(() => {
+    search()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Header value={value} setValue={setValue} search={search}/>
+      <div style={{
+      display: 'flex',
+      justifyContent:'space-between',
+    }}>
+    <Novigator/>
+      <Switch>
+      <div>
+        <Route exact path='/' render={()=><Search videos={data}/>}/>
+        <Route exact path='/detail/:videoId' component={Detail}/>
+        </div>
+      </Switch>
+      </div>
     </div>
-  );
+  )
 }
-
-export default App;

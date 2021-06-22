@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.lenovo {
+    display: flex;
+    margin-top: 140px;
+}
+.ifr {
+    margin-left: 152px;
+    margin-top: 30px;
+}
+.randomVideo {
+    width: 20%;
+    margin-left: 55px;
+    margin-top: 30px;
+}
+.titlem {
+    width: 50px;
+    font-size: 20px;
+}

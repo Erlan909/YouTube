@@ -1,0 +1,23 @@
+html,body {
+    margin: 0;
+    padding: 0;
+
+}
+.menu {
+    margin-top: 50%;
+    line-height: 95px;
+    margin-left: 45px;
+    text-decoration: none;
+    list-style: none;
+}
+.navi {
+    font-size: 25px !important;
+    position: relative;
+}
+.tipa {
+  position: absolute !important;
+  margin-top: 20px !important;
+  margin-left: -41px !important;
+  font-size: 15px !important;
+  text-align: center !important;
+}
